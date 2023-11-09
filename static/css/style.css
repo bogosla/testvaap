@@ -1,0 +1,33 @@
+/* -------------------------------
+# START CONFIGURATION
+-------------------------------- */
+
+html,
+body {
+	height: 620px;
+	margin: 0;
+	max-width: 100%;
+	overflow: hidden;
+}
+
+/* -------------------------------
+# FOOTER CONFIGURATION
+-------------------------------- */
+.wrapper {
+	height: 600px;
+	min-height: 600px;
+	margin-bottom: -50px;
+}
+
+#footer,
+.push {
+	height: 100px;
+
+}
+
+/* -------------------------------
+# OTHERS CONFIGURATION
+-------------------------------- */
+.side-label {
+	width: 45px;
+}

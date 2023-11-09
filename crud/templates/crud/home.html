@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title %}
+Home
+{% endblock %}
+
+<!-- ======== Navbar content (Page Home) ======== -->
+{% block navbar-content %}
+	<i class="text-warning fas fa-tshirt"></i>&nbsp;&nbsp;&nbsp; Product List
+{% endblock %}
+
+<!-- ======== Block content (Page Home) ======== -->
+{% block content %}
+	<div class="container">
+		<br><br>
+		<a href="{% url 'add_product' %}" class="btn btn-outline-secondary btn-sm"><i class="fas fa-plus"></i>&nbsp;&nbsp; Add Product</a>
+
+		<table class="table table-bordered table-sm mt-4" style="text-align: center; font-size: 14px;">
+			<thead>
+				<tr>
+					<th style="width: 25%;">Product</th>
+					<th style="width: 15%;">Purchase price</th>
+					<th style="width: 15%;">Sale price</th>
+					<th style="width: 8%;">Quantity</th>
+					<th style="width: 8%;">Gender</th>
+					<th style="width: 19%;">Registered</th>
+					<th colspan="2" style="width: 10%;">Actions</th>
+					<th></th>
+				</tr>
+			</thead>
+			<!-- Back-end data -->
+			<tbody>
+				{% for product in products %}
+					<tr>
+						<td>{{product.product}}</td>
+						<td>{{product.purchase}}</td>
+						<td>{{product.sale}}</td>
+						<td>{{product.qty}}</td>
+						<td>{{product.gender}}</td>
+						<td>{{product.created_at | date:'m/d/Y (H:i)' }}</td>
+						<td>
+							<a href="/product/{{ product_id }}" class="btn btn-secondary" title="Edit product"><i class="fas fa-pen"></i></a>
+						</td>
+						<td>
+							<a href="/delete_product/{{ product_id }}" class="btn btn-warning" title="Delete product"><i class="fas fa-trash-all"></i></a>
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+			
+		</table>
+	</div> <!-- END // container -->
+{% endblock %}

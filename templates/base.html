@@ -1,0 +1,48 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CRUD DJANGO | {% block title %}Home{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon"  href="{% static 'img/favicon.ico' %}">
+
+    <!-- Logo -->
+    <link rel="shortcut icon"  href="{% static 'img/logo.png' %}">
+
+    <!-- Static CSS -->
+    <link rel="stylesheet"  href="/static/css/style.css/?{% now 'U' %}">
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- ======== Navbar ======== -->
+      <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="col-sm">
+            <a class="navbar-brand flex-grow-1" style="text-align: center; color: #fff; margin-left: 25px;">{% block navbar-content %}{% endblock %}</a>
+          </div>
+        </nav>
+      </header>
+
+      <!-- ======== Block content (ROOT) ======== -->
+      {% block content %}{% endblock %}
+    </div><!-- ======== END // wrapper -->
+
+    <!-- ======== Footer ======== -->
+    <footer class="bg-dark text-center text-lg-start" id="footer" style="color: #fff;">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">&copy; {% now 'Y' %} Copyright:
+        <a href="" class="text-light" style="text-decoration: none;">
+          <span class="text-warning">www.your-website.com</span>
+        </a>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
