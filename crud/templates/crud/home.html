@@ -17,10 +17,11 @@ Home
 		<table class="table table-bordered table-sm mt-4" style="text-align: center; font-size: 14px;">
 			<thead>
 				<tr>
-					<th style="width: 25%;">Product</th>
-					<th style="width: 15%;">Purchase price</th>
+					<th style="width: 20%;">Product</th>
+					<th style="width: 10%;">Purchase price</th>
 					<th style="width: 15%;">Sale price</th>
 					<th style="width: 8%;">Quantity</th>
+					<th style="width: 10%;">Amount</th>
 					<th style="width: 8%;">Gender</th>
 					<th style="width: 19%;">Registered</th>
 					<th colspan="2" style="width: 10%;">Actions</th>
@@ -35,6 +36,7 @@ Home
 						<td>{{product.purchase}}</td>
 						<td>{{product.sale}}</td>
 						<td>{{product.qty}}</td>
+						<td>{{product.amount}}</td>
 						<td>{{product.gender}}</td>
 						<td>{{product.created_at | date:'m/d/Y (H:i)' }}</td>
 						<td>
@@ -46,6 +48,12 @@ Home
 					</tr>
 				{% endfor %}
 			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="4" style="font-weight: 600;">Total:</td>
+					<td id="totalPrice">{{ total }}$</td>
+				</tr>
+			</tfoot>
 			
 		</table>
 	</div> <!-- END // container -->
