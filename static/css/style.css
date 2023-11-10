@@ -4,25 +4,25 @@
 
 html,
 body {
-	height: 620px;
-	margin: 0;
+	height: 100%;
+	/* margin: 0; */
 	max-width: 100%;
-	overflow: hidden;
+
+	/* overflow: hidden; */
 }
 
 /* -------------------------------
 # FOOTER CONFIGURATION
 -------------------------------- */
-.wrapper {
+/* .wrapper {
 	height: 600px;
 	min-height: 600px;
 	margin-bottom: -50px;
-}
+} */
 
 #footer,
 .push {
 	height: 100px;
-
 }
 
 /* -------------------------------
@@ -30,4 +30,16 @@ body {
 -------------------------------- */
 .side-label {
 	width: 45px;
+}
+
+#footer {height: 60px;}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+}
+main {
+	flex: 1;
 }
